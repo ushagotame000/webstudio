@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css or a relevant CSS file */
+
+@keyframes slide {
+  0% {
+    transform: translateX(2px); /* Move left */
+  }
+  50% {
+    transform: translateX(15px); /* Move right */
+  }
+  100% {
+    transform: translateX(2px); /* Move back to left */
+  }
+}
+
+.animated-image {
+  animation: slide 4s ease-in-out infinite; /* Adjust the duration for speed */
+}
