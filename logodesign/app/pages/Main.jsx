@@ -20,7 +20,7 @@ const Main = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundColor: "  ",
-          opacity: 0.2,
+          opacity: 0.1,
         }}
       ></div>
       <div className="flex flex-col justify-center items-center h-full">
@@ -42,7 +42,7 @@ const Main = () => {
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-10 justify-center p-6 mt-4">
+        <div className="flex flex-wrap-reverse gap-10 justify-center p-6 mt-4">
           <Button
             label="Quick Enquiry"
             variant="filled"

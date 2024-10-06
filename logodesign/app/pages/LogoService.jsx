@@ -9,8 +9,11 @@ const LogoService = () => {
     <div className="w-full">
       {" "}
       {/* Full-width container */}
-      <div className="services w-full text-center mt-5">
-        <div className="blueside transform rotate-90">
+      <div className="services w-full text-center relative mt-3">
+        <div className="blueside absolute transform -rotate-45 -top-14 -left-10">
+          <img src="/Vector/bluedot.png" alt="" className="" />
+        </div>
+        <div className="blueside absolute transform -rotate-6 right-0 -top-11">
           <img src="/Vector/bluedot.png" alt="" className="" />
         </div>
         <div className="heading p-2">

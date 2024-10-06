@@ -17,9 +17,11 @@ const Portfolio = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="relative p-6 md:p-8 lg:p-12 bg-gray-200 rounded-md overflow-hidden shadow-lg"
+            className={`relative p-6 md:p-8 lg:p-12 bg-gray-200 rounded-md overflow-hidden shadow-lg ${
+              index === images.length - 1 ? "shadow-none" : "" // Optional shadow for the last item
+            }`}
             style={{
-              background: `linear-gradient(to top, rgba(231, 231, 231, 1), rgba(246, 246, 246, 0) `,
+              background: `linear-gradient(to top, rgba(231, 231, 231, 1), rgba(246, 246, 246, 0))`,
             }}
           >
             <img
@@ -30,6 +32,9 @@ const Portfolio = () => {
           </div>
         ))}
       </div>
+
+      {/* Shadow Line at the Bottom */}
+      <div className="h-2 bg-gradient-to-b from-transparent to-gray-400 shadow-md mt-6" />
     </div>
   );
 };

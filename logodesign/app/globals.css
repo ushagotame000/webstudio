@@ -19,3 +19,17 @@
 .animated-image {
   animation: slide 4s ease-in-out infinite; /* Adjust the duration for speed */
 }
+
+.flip-horizontal {
+  transform: scaleX(-1); /* Flip horizontally */
+}
+
+.flip-vertical {
+  transform: scaleY(-1); /* Flip vertically */
+}
+.flip-x {
+  transform: scaleX(-1); /* Flips the image horizontally along the X-axis */
+}
+.flip-y {
+  transform: scaleX(-1); /* Flips the image horizontally along the X-axis */
+}

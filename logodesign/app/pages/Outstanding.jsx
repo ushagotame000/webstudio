@@ -33,118 +33,103 @@ const Outstanding = () => {
   ];
 
   return (
-    <div className="main pt-5 shadow-lg">
-      <div className="heading text-4xl text-center pt-5">
-        Our Outstanding Logo Design
-      </div>
-      <div className="intro text-md flex text-justify p-5">
-        A powerful logo is critical for growing your emblem's visibility and
-        attracting extra users. At Webstudio Nepal, a top-of-the-line brand
-        layout company in Nepal, we craft compelling trademarks that raise your
-        emblem's fee while preserving cost-effectiveness. Our skilled emblem
-        designers hire state-of-the-art photograph factors, vibrant color
-        schemes, elegant calligraphy, and fantastic layout strategies to ensure
-        your logo captures interest.
-      </div>
-
-      <div className="flex justify-between w-full h-full relative space-x-8 ">
-        {/* Left column for odd-indexed items */}
-        <div className="flex flex-col w-1/2 space-y-16">
-          {sections.map((section, index) =>
-            index % 2 !== 0 ? (
-              <div
-                key={index}
-                className="relative flex items-center justify-end border-2 border-blue-300 border-dashed rounded-full bg-white shadow-md"
-              >
-                {/* Main content aligned to the left of the circle */}
-                <div
-                  className="flex-1 p-6 h-full"
-                  style={{ marginRight: "20px" }} // Added a little space between content and circle
-                >
-                  <h3
-                    className={`text-2xl font-bold mb-2 ${
-                      index === 1
-                        ? "text-blue-500"
-                        : index >= 2
-                        ? "text-violet-500"
-                        : "text-blue-500"
-                    }`}
+    <div className="main">
+      <div className="text-center justify-center w-full h-full relative flex ">
+        <div className="flex flex-col space-y-8 justify-center items-center text-center w-3/5">
+          {sections.map((section, index) => (
+            <div
+              key={index}
+              className="relative flex items-center justify-between border-2 border-blue-300 border-dashed rounded-full bg-white shadow-md"
+            >
+              {/* Conditional rendering for left/right positioning */}
+              {index % 2 === 0 ? (
+                <>
+                  {/* Text on left */}
+                  <div
+                    className="flex-1 p-6 h-full"
+                    style={{ marginRight: "-50px" }}
                   >
-                    {section.title}
-                  </h3>
-                  <p className="text-gray-600">{section.description}</p>
-                </div>
+                    <h3
+                      className={`text-2xl font-bold mb-2 ${
+                        index === 1
+                          ? "text-blue-500"
+                          : index >= 2
+                          ? "text-violet-500"
+                          : "text-blue-500"
+                      }`}
+                    >
+                      {section.title}
+                    </h3>
+                    <p className="text-gray-600">{section.description}</p>
+                  </div>
 
-                {/* Circle container aligned to the right */}
-                <div
-                  className={`rounded-full border-8 flex items-center justify-center bg-white ${
-                    index === 1 ? "border-blue-500" : "border-violet-400"
-                  }`}
-                  style={{ height: "150px", width: "150px" }}
-                >
-                  <img
-                    src={section.icon}
-                    alt={section.title}
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            ) : null
-          )}
-        </div>
-
-        {/* Right column for even-indexed items */}
-        <div className="flex flex-col w-1/2 space-y-16">
-          {sections.map((section, index) =>
-            index % 2 === 0 ? (
-              <div
-                key={index}
-                className="relative flex items-center justify-start border-2 border-blue-300 border-dashed rounded-full bg-white shadow-md mt-14 flex-wrap"
-              >
-                {/* Circle container aligned to the left */}
-                <div
-                  className={`rounded-full border-8 flex items-center justify-center  bg-white ${
-                    index === 0 ? "border-blue-400" : "border-violet-400"
-                  }`}
-                  style={{ height: "150px", width: "150px" }}
-                >
-                  <img
-                    src={section.icon}
-                    alt={section.title}
-                    className="object-cover"
-                  />
-                </div>
-
-                {/* Main content aligned to the right of the circle */}
-                <div
-                  className="flex-1 p-6 h-full"
-                  style={{ marginLeft: "20px" }} // Added a little space between circle and content
-                >
-                  <h3
-                    className={`text-2xl font-bold mb-2 ${
-                      index === 1
-                        ? "text-blue-500"
-                        : index >= 2
-                        ? "text-violet-500"
-                        : "text-blue-500"
+                  {/* Circle container with icon on right */}
+                  <div
+                    className={`rounded-full border-8 flex items-center justify-center bg-white ${
+                      index === 0
+                        ? "border-blue-400"
+                        : index === 1
+                        ? "border-blue-500"
+                        : "border-violet-400"
                     }`}
+                    style={{ height: "150px", width: "150px" }} // Adjust circle size
                   >
-                    {section.title}
-                  </h3>
-                  <p className="text-gray-600">{section.description}</p>
-                </div>
-              </div>
-            ) : null
-          )}
+                    <img
+                      src={section.icon}
+                      alt={section.title}
+                      className="object-cover"
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/* Circle container with icon on left */}
+                  <div
+                    className={`rounded-full border-8 flex items-center justify-center bg-white ${
+                      index === 0
+                        ? "border-blue-400"
+                        : index === 1
+                        ? "border-blue-500"
+                        : "border-violet-400"
+                    }`}
+                    style={{ height: "150px", width: "150px" }} // Adjust circle size
+                  >
+                    <img
+                      src={section.icon}
+                      alt={section.title}
+                      className="object-cover"
+                    />
+                  </div>
+
+                  {/* Text on right */}
+                  <div
+                    className="flex-1 p-6 h-full"
+                    style={{ marginLeft: "-50px" }}
+                  >
+                    <h3
+                      className={`text-2xl font-bold mb-2 ${
+                        index === 1
+                          ? "text-blue-500"
+                          : index >= 2
+                          ? "text-violet-500"
+                          : "text-blue-500"
+                      }`}
+                    >
+                      {section.title}
+                    </h3>
+                    <p className="text-gray-600">{section.description}</p>
+                  </div>
+                </>
+              )}
+            </div>
+          ))}
         </div>
       </div>
-
-      {/* Keep the button in a separate div */}
-      <div className="flex justify-center gap-8 p-6">
+      <div className="btn p-3 justify-center flex">
         <Button
           label="Logo Design Packages"
           variant="filled"
-          onClick={handleClick("Logo Design Packages")}
+          onClick={handleClick("Request a Quote is clicked!")}
         />
       </div>
     </div>
